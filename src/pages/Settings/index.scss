@@ -1,0 +1,26 @@
+@use "../../variables" as *;
+
+@property --c {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: red;
+}
+
+.settings {
+    --c: #{$tint--disconnected};
+    transition: --c 1s ease-in-out;
+    background: linear-gradient($foreground, var(--c));
+    flex-grow: 1;
+    padding: 12px 12px 24px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    &--connected {
+        --c: #{$tint--connected};
+    }
+
+    &--disconnected {
+        --c: #{$tint--disconnected};
+    }
+}

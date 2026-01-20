@@ -1,0 +1,108 @@
+@use "../../variables" as *;
+
+.dropdown {
+    flex: 1 1;
+    border-radius: 5px;
+    overflow: clip;
+
+    &__divider {
+        width: 100%;
+        height: 1px;
+        background-color: #6f6f6f;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        color: white;
+        font-size: 13px;
+    }
+
+    &__icon {
+        fill: #a2a2a2;
+        transition: transform 0.3s ease;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__header {
+        transition: filter 0.15s ease-in-out;
+        height: 28px;
+        flex: 0;
+        background-color: $button;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px 0 10px;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.30);
+        }
+
+        &--expanded {
+            &__icon {
+                animation: 1s rotate;
+            }
+        }
+    }
+
+    &__menu {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 96px;
+        height: fit-content;
+        border-radius: 0 0 5px 5px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $button;
+        }
+    }
+
+    &__item {
+        height: 28px;
+        width: 100%;
+        flex-shrink: 0;
+        transition: filter 0.15s ease-in-out;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $button;
+        padding-left: 10px;
+        color: #919191;
+        cursor: pointer;
+        font-size: 13px;
+
+        &:hover {
+            filter: brightness(1.30);
+        }
+    }
+
+    &--expanded {
+        .dropdown__icon {
+            transform: rotate(-180deg);
+        }
+
+        .dropdown__header {
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    &--disabled {
+        .dropdown__header {
+            background-color: rgba($color: #FFFFFF, $alpha: 0.025);
+            cursor: not-allowed;
+        }
+    }
+}

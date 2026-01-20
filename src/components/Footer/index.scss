@@ -1,0 +1,48 @@
+@use "../../variables" as *;
+@use "sass:color";
+
+.footer {
+    width: 100%;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    transition: background-color 1s ease-in-out, border 1s ease-in-out;
+
+    &--connected {
+        background-color: $tint--connected;
+        border-top: 1px solid color.adjust($tint--connected, $lightness: 10%);
+    }
+
+    &--disconnected {
+        background-color: $tint--disconnected;
+        border-top: 1px solid color.adjust($tint--disconnected, $lightness: 10%);
+    }
+
+    &__stats {
+        display: flex;
+        gap: 10px;
+        line-height: 10px;
+    }
+
+    &__stat {
+        color: white;
+        font-size: 12px;
+    }
+
+    &__status {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+
+        &--disconnected {
+            background-color: #e41212;
+        }
+
+        &--connected {
+            background-color: #2bc517;
+        }
+    }
+}

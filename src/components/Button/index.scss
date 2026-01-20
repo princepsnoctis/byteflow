@@ -1,0 +1,36 @@
+@use "../../variables" as *;
+
+.button {
+    height: 28px;
+    flex: 1 1;
+    background-color: $button;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: filter 0.15s ease-in-out;
+
+    &--disabled {
+        background-color: $button--disabled;
+        cursor: not-allowed;
+    }
+
+    &__text {
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        color: white;
+        font-size: 13px;
+    }
+
+    &--disabled {
+        .button__text {
+            color: #979797;
+        }
+    }
+
+    &:not(&--disabled):hover {
+        filter: brightness(1.30);
+    }
+}

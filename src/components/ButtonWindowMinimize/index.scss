@@ -1,0 +1,23 @@
+@use "../../variables" as *;
+
+.button-window-minimize {
+    width: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-in-out;
+    app-region: no-drag;
+
+    &__icon * {
+        fill: #808080;
+    }
+
+    &:hover {
+        background-color: #414141;
+
+        .button-window-minimize__icon * {
+            fill: #ffffff;
+        }
+    }
+}

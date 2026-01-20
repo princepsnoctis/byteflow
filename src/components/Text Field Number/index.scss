@@ -1,0 +1,42 @@
+@use "../../variables" as *;
+
+.text-field-number {
+    height: 28px;
+    flex: 1 1;
+
+    background-color: $button;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    //padding-left: 10px;
+
+    cursor: text;
+
+    text-align: center;
+
+    color: white;
+    font-size: 13px;
+
+    &__input {
+        width: 100%;
+
+        &::placeholder {
+            color: #b8b8b8;
+        }
+    }
+
+    transition: filter 0.15s ease-in-out;
+
+    &__input[type="number"]::-webkit-outer-spin-button,
+    &__input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &:hover {
+        filter: brightness(1.15);
+    }
+}

@@ -1,0 +1,24 @@
+@use "../../variables" as *;
+
+.button-window-maximize {
+    width: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #808080;
+    transition: background-color 0.1s ease-in-out;
+    app-region: no-drag;
+
+    &__icon * {
+        stroke: #808080;
+    }
+
+    &:hover {
+        background-color: #414141;
+
+        .button-window-maximize__icon * {
+            stroke: #ffffff;
+        }
+    }
+}

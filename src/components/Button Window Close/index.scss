@@ -1,0 +1,26 @@
+@use "../../variables" as *;
+
+.button-window-close {
+    width: 45px;
+    height: 40px;
+
+    transition: background-color 0.1s ease-in-out;
+
+    app-region: no-drag;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon * {
+        fill: #808080;
+    }
+
+    &:hover {
+        background-color: #E81123;
+
+        .button-window-close__icon * {
+            fill: #ffffff;
+        }
+    }
+}

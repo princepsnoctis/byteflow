@@ -1,0 +1,33 @@
+@use "../../variables" as *;
+
+.button-state {
+    height: 28px;
+    flex: 1 1;
+
+    background-color: $button;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 10px;
+
+    transition: filter 0.15s ease-in-out;
+
+    cursor: pointer;
+
+    &--active {
+        background-color: $button--active
+    }
+
+    &__text {
+        color: white;
+        font-size: 13px;
+    }
+
+    &:not(&--active):hover {
+        filter: brightness(1.15);
+    }
+}

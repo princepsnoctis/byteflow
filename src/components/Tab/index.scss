@@ -1,0 +1,63 @@
+@use "../../variables" as *;
+@use "sass:color";
+
+.tab {
+    box-sizing: border-box;
+    flex: 1 1;
+    height: 28px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: left;
+    padding-left: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.15s ease-in-out;
+    app-region: no-drag;
+
+    &--active {
+        transition: background-color 0s;
+        background-color: $foreground;
+        border-radius: 10px 10px 0 0;
+        height: 34px;
+        margin-bottom: -6px;
+        overflow: visible;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            left: -10px;
+            background-color: $foreground;
+            z-index: 1;
+            clip-path: path("M10 0 Q 10 10 0 10 L 10 10 Z");
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            right: -10px;
+            background-color: $foreground;
+            z-index: 1;
+            clip-path: path("M0 0 Q 0 10 10 10 L 0 10 ZZ");
+        }
+    }
+
+    &__title {
+        line-height: 28px;
+        color: white;
+        font-size: 13px;
+    }
+
+    &--connected:hover:not(.tab--active) {
+        background-color: rgba($color: color.adjust($tint--connected, $lightness: 5%), $alpha: 1);
+    }
+
+    &--disconnected:hover:not(.tab--active) {
+        background-color: rgba($color: color.adjust($tint--disconnected, $lightness: 5%), $alpha: 1);
+    }
+}

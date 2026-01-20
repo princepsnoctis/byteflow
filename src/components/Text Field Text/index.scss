@@ -1,0 +1,38 @@
+@use "../../variables" as *;
+
+.text-field-text {
+    height: 28px;
+    flex: 1 1;
+
+    background-color: $button;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    //padding-left: 10px;
+
+    cursor: text;
+
+    text-align: left;
+
+    color: white;
+    font-size: 13px;
+
+    transition: filter 0.15s ease-in-out;
+
+    &__input {
+        width: 100%;
+        flex: 1 1;
+        padding: 0 10px;
+
+        &::placeholder {
+            color: #b8b8b8;
+        }
+    }
+
+    &:hover {
+        filter: brightness(1.15);
+    }
+}

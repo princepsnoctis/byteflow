@@ -1,0 +1,42 @@
+@use "../../variables" as *;
+
+.navigator {
+    width: 100%;
+    height: 40px;
+    background-color: $background;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    gap: 3px;
+    padding: 0 0 0 6px;
+    app-region: drag;
+
+    &__divider {
+        width: 1px;
+        height: 12px;
+        background-color: $foreground;
+    }
+
+    &__group {
+        overflow: visible;
+        height: 100%;
+        flex: 1 1;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-direction: row;
+        gap: 3px;
+
+        &--left {
+            flex: 3
+        }
+
+        &--right {
+            display: flex;
+            justify-content: right;
+            gap: 0;
+        }
+    }
+}

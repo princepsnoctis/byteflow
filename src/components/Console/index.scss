@@ -1,0 +1,35 @@
+@use "../../variables" as *;
+
+.console {
+    background-color: rgba($color: $background, $alpha: 0.4);
+    border-radius: 5px;
+    padding: 12px;
+    user-select: text;
+    flex: 1 1;
+    overflow: auto;
+
+    &__line {
+        color: white;
+        font-weight: 300;
+        user-select: text;
+        font-size: 13px;
+        white-space: break-spaces;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+    }
+
+    &__marked {
+        font-size: 13px;
+        border-radius: 3px;
+        background-color: rgba($color: yellow, $alpha: 0.25);
+    }
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+}
