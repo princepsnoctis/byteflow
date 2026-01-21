@@ -1,6 +1,6 @@
 # Byteflow
 
-Byteflow is lightweight, cross-platform serial communication tool built with Tauri, designed to provide a polished and user-friendly interface for working with serial devices.
+Byteflow is a lightweight, cross-platform serial communication tool built with Tauri, designed to provide a polished and user-friendly interface for working with serial devices.
 
 ## Usage
 Byteflow is designed to make serial communication simple while still giving you full control over connection and data formats.
