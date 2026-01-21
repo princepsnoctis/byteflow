@@ -1,6 +1,28 @@
 # Byteflow
 
+![Release](https://img.shields.io/github/v/release/princepsnoctis/byteflow)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Byteflow is a lightweight, cross-platform serial communication tool built with Tauri, designed to provide a polished and user-friendly interface for working with serial devices.
+
+## Table of Contents
+
+* [Features](#features)
+* [Usage](#usage)
+* [Getting Started](#getting-started)
+* [License](#license)
+
+---
+
+## Features
+
+* **Cross-platform** serial communication (Windows, Linux)
+* **Receive** and display data in ASCII / UTF-8 / HEX
+* **Send** messages with text or HEX mode
+* **Macro support** (import/export JSON)
+* **Save** received logs to a file
+
+---
 
 ## Usage
 Byteflow is designed to make serial communication simple while still giving you full control over connection and data formats.
@@ -40,7 +62,7 @@ Byteflow is designed to make serial communication simple while still giving you 
 * Record all received data to a file for later analysis
 * All receive-related features are available in the **Receive** tab
 
-> The second screenshot shows the same data displayed in HEX format
+> *The second screenshot shows the same data displayed in HEX format*
 
 ### Macros
 <p align="center">
@@ -70,3 +92,44 @@ Byteflow is designed to make serial communication simple while still giving you 
   Example: <code>\$\$01</code> sends the text <code>\$01</code>
 * Trigger saved macros with a single click
 * All sending functionality is available in the **Transmit** tab
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js (stable)
+* Rust (stable)
+
+> **Note:** Byteflow was developed and tested on **Windows**. Linux / macOS support may work, but it has not been tested.
+
+### Clone the repository
+```bash
+git clone https://github.com/princepsnoctis/byteflow.git
+cd byteflow
+npm install
+```
+
+### Development (Tauri)
+```bash
+npm run tauri:dev
+```
+
+### Web UI only (no Tauri)
+```bash
+npm run dev
+```
+
+### Build (production):
+```bash
+npm run tauri:build
+```
+
+The production build is generated in: `src-tauri/target/release/bundle/`
+
+---
+
+## License
+
+Byteflow is released under the MIT License. See the [LICENSE](LICENSE) file for details.
